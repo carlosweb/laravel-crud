@@ -5,6 +5,15 @@
     <h1 class=" text-4xl font-bold text-blue-600 my-3">Create</h1>
 
 
+    @if($errors->any())
+    @foreach ($errors->all() as $error)
+    <ul>
+        <li class="bg-red-300 text-red-950 rounded-sm p-2 mb-2">{{ $error }}</li>
+    </ul>
+    @endforeach
+    @endif
+
+
     @if(session()->has('message'))
         <h5 class="message--primary">{{ session()->get('message') }}</h5>
     @endif
